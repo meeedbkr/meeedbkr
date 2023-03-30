@@ -23,7 +23,13 @@ class AboutMe:
             "Pl/Sql": 5,
         }
         self.interests = ["Open source", "Data science", "Machine learning", "Web development"]
-        self.bio = f" { self.name } is a { self.education.degree }'s student in Computer Science with a focus on modeling complex systems. He has a Bachelor's degree in { self.education.fields } and experience in freelance drawing NFT characters and fixing PHP website bugs. Mohammed is proficient in { ' ,'.join(skills.keys()) } and has knowledge of machine learning concepts. He is experienced in agile methodologies, Scrum, FDD, Merise, and UML. "
+        self.bio = f" { self.name } is a { self.education.degree }'s student in \
+        Computer Science with a focus on modeling complex systems. He has a \
+        Bachelor's degree in { self.education.fields } and experience in freelance \
+        drawing NFT characters and fixing PHP website bugs. Mohammed is proficient \
+        in { ' ,'.join(skills.keys()) } and has knowledge of machine learning \
+        concepts. He is experienced in agile methodologies, Scrum, FDD, Merise,  \
+        and UML. "
         
     def get_current_workplace(self):
         return self.current_workplace
