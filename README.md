@@ -1,6 +1,10 @@
+<!-- made by mohammed EL-boukri , March 30, 2023 6:00AM -->
+<!-- a class contains all my info -->
 ```python 
 class AboutMe:
+	# constuctor
     def __init__(self):
+    	# my attributes
         self.name = "Mohammed El-boukri"
         #self.current_workplace = {
         #    "company": "Fiverr",
@@ -30,7 +34,8 @@ class AboutMe:
         in { ' ,'.join(skills.keys()) } and has knowledge of machine learning \
         concepts. He is experienced in agile methodologies, Scrum, FDD, Merise,  \
         and UML. "
-        
+
+    # getters methods
     def get_current_workplace(self):
         return self.current_workplace
 
@@ -51,7 +56,7 @@ class AboutMe:
 ```
 
 ## Contact Me
-
+<!-- links so you can contact me -->
 You can reach me at:
 
 - [Email](mailto:mohammedelboukri00@gmail.com)
