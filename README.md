@@ -45,7 +45,8 @@ class AboutMe:
            "position": "None"
         }
 
-        self.favorite_python_libraries = ["NumPy", "Pandas", "Matplotlib", "Scikit-learn", "Tkinter", 'Beautifulsoup', 'Selenium']
+        self.favorite_python_libraries = ["NumPy", "Pandas", "Matplotlib",
+                                         "Scikit-learn", "Tkinter", 'Beautifulsoup', 'Selenium']
 
     # getters methods
     def get_current_workplace(self):
