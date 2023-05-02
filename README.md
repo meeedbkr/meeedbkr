@@ -15,8 +15,8 @@ class AboutMe:
         }
 
         self.bio = f" { self.name } is a { self.education.degree }'s student in \
-        Computer Science with a focus on modeling complex systems. He has a \
-        Bachelor's degree in { self.education.fields } and experience in freelance \
+        { self.education.fields } with a focus on modeling complex systems. He has a \
+        Bachelor's degree in Computer Science and experience in freelance \
         drawing NFT characters and fixing PHP website bugs. Mohammed is proficient \
         in { ' ,'.join(skills.keys()) } and has knowledge of machine learning \
         concepts. He is experienced in agile methodologies, Scrum, FDD, Merise,  \
@@ -41,16 +41,16 @@ class AboutMe:
         self.hobbies = ["Coding", "Hiking", "Photography", "Traveling"]
 
         self.current_workplace = {
-           "company": "notYet",
-           "position": "None"
+           "company": None,
+           "position": None
         }
 
         self.favorite_python_libraries = ["NumPy", "Pandas", "Matplotlib",
                                          "Scikit-learn", "Tkinter", 'Beautifulsoup', 'Selenium']
 
     # getters methods
-    def get_current_workplace(self):
-        return self.current_workplace
+    # def get_current_workplace(self):
+    #     return self.current_workplace
 
     def get_skills(self):
         return self.skills
@@ -59,13 +59,13 @@ class AboutMe:
         return self.interests
 
     def get_future_goal(self):
-        return self.goal
+        return self.future_goal
 
     def get_hobbies(self):
         return self.hobbies
 
     def get_favorite_python_libraries(self):
-        return 
+        return sel.favorite_python_libraries
 ```
 
 ## Contact Me
