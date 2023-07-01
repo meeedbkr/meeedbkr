@@ -1,0 +1,295 @@
+/*******************************************************************************************
+***************************************Made By Meeedbk**************************************
+******************************Thanks for checking my code ;)*******************************
+******************************  https://github.com/meeedbkr  *******************************
+**************************************Start Global****************************************/
+
+/* Variables */
+:root {
+    /* Coloring */
+    --main-color: #ff3f00;
+    --secondary-color: #fd622f;
+    --white-color: #fffa;
+    --light-color: #8f969f;
+    --background-light-color: #252e3e;
+    --background-dark-color: #131217;
+    --background-gradient: linear-gradient(to right, #060d1d, #111e2c);
+
+    /* Transition */
+    --transition: 0.4s ease;
+
+    /* Spacing */
+    --padding: 1.4em 0;
+}
+
+/* Simple reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    background: var(--background-dark-color);
+    /* 50% opacity */
+    text-transform: capitalize;
+    font-size: 16px;
+    height: 100vh;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Settings */
+.container {
+    width: 96%;
+    margin: 0 auto;
+}
+
+* {
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+/* Responsiveness */
+
+/***************************************End Global**************************************
+ **************************************************************************************
+ ***************************************************************************************/
+
+/***************************************Start Components***************************************/
+
+/*section .container, main .container{
+    height: 100vh;
+    background: red;
+}*/
+
+/* Hover Effect */
+.main-effect{
+    color: #fff;
+    opacity: .6;
+    transition: var(--transition);
+    cursor: pointer;
+
+}
+.main-effect:hover {
+  opacity: 1;
+  transform: translateX(10px);
+}
+.row{
+    display: flex;
+}
+.col{
+    flex: 1;
+    height: 100vh;
+}
+/***************************************End Components***************************************/
+
+/***************************************Start Header***************************************/
+header {
+
+    position: fixed;
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+header .container .logo {
+    font-size: 1.2em;
+    flex: 3;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container nav .social-link:hover{
+transform: translateY(-5px);
+}
+
+header .container nav .social-link img {
+    height: 40px;
+    width: 40px;
+}
+
+header .container nav #nav #toggle-button {
+    cursor: pointer;
+}
+
+header .container nav #nav #toggle-button:hover{
+    transform: rotate(360deg);
+}
+
+header .container nav #nav ul {
+    position: absolute;
+    background: var(--background-light-color);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+header .container nav ul li#exit {
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+header .container nav ul li#exit:hover {
+    color: var(--white-color);
+    background: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+header .container nav ul li a {
+    display: inline-block;
+    padding: .6em;
+    font-size: 3em;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+header .container nav ul li a:hover {
+    transform: translateX(15%);
+    color: var(--main-color);
+    border-radius: 10px;
+}
+
+#scrollbar {
+    color: var(--white-color);
+    position: fixed;
+    left: 2%;
+    top: 25%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70px;
+}
+
+#scrollbar #scroll-body a{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    margin: 30% 0;
+    border-radius: 2px;
+    padding: 3px;
+}
+#scrollbar #scroll-body a.active{
+       width: 50px; 
+}
+#scrollbar #scroll-desc {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+}
+
+#scrollbar #scroll-desc:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 4px;
+    background: var(--white-color);
+    border-radius: 2px;
+    top: 110%;
+
+}
+
+/***************************************End Header***************************************/
+
+/***************************************Start Main***************************************/
+main .col:first-of-type{
+    flex: 2;
+}
+main .col:last-of-type{
+    flex: 3;
+}
+main .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5em;
+}
+main h1{
+    color: #fff;
+    font-size: 5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+main .col hr{
+    width: 100px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 4px;
+    border: none;
+    margin: .6em 0;
+    ml
+}
+main .col hr:last-of-type{
+    margin-left: 30px;
+}
+main h2{
+    color: var(--white-color);
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+main #description{
+    color: var(--white-color);
+    line-height: 1.4;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    padding-right: 200px;
+}
+main #description span{
+    color: var(--main-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+/***************************************End Main***************************************/
+
+/***************************************Start Footer***************************************/
+
+
+
+/***************************************End Footer***************************************/
