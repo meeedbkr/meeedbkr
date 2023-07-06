@@ -33,14 +33,14 @@ body {
     margin: 0;
     font-family: 'Poppins', 'Helvetica', sans-serif;
     background: var(--background-dark-color);
-    /* 50% opacity */
     text-transform: capitalize;
     font-size: 16px;
     height: 100vh;
     width: 100vw;
     height: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     scroll-behavior: smooth;
+    counter-reset: section;
 }
 
 /* Settings */
@@ -66,37 +66,104 @@ a {
 
 /***************************************Start Components***************************************/
 
-/*section .container, main .container{
-    height: 100vh;
-    background: red;
-}*/
-
 /* Hover Effect */
-.main-effect{
+.main-effect {
     color: #fff;
     opacity: .6;
     transition: var(--transition);
     cursor: pointer;
+}
 
-}
 .main-effect:hover {
-  opacity: 1;
-  transform: translateX(10px);
+    opacity: 1;
+    transform: translateX(10px);
 }
-.row{
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.row {
     display: flex;
 }
-.col{
+
+.col {
     flex: 1;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5em;
+}
+
+section .col:first-of-type {
+    flex: 2;
+}
+
+section .col:last-of-type {
+    position: relative;
+}
+
+section .col:last-of-type:before {
+    counter-increment: section;
+    content: counter(section, decimal-leading-zero);
+    position: absolute;
+    top: 70%;
+    right: 20%;
+    font-size: 6em;
+    font-weight: bold;
+    color: #fff;
+}
+
+h1,
+h2 {
+    color: #fff;
+    font-size: 5.3em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 4.2em;
+    width:80%;
+}
+
+.col hr {
+    width: 100px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 4px;
+    border: none;
+    margin: .6em 0;
+}
+
+.col hr:last-of-type {
+    margin-left: 40px;
+}
+
+p.desc {
+    color: var(--white-color);
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: 1.5rem;
+    line-height: 1.4;
+}
+.img{
+    position: absolute;
+    z-index: -1;
+    right:0;
+    width: 180%;
 }
 /***************************************End Components***************************************/
 
 /***************************************Start Header***************************************/
 header {
-
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 
 header .container {
@@ -117,8 +184,9 @@ header .container nav {
     justify-content: space-between;
     align-items: center;
 }
-header .container nav .social-link:hover{
-transform: translateY(-5px);
+
+header .container nav .social-link:hover {
+    transform: translateY(-5px);
 }
 
 header .container nav .social-link img {
@@ -130,7 +198,7 @@ header .container nav #nav #toggle-button {
     cursor: pointer;
 }
 
-header .container nav #nav #toggle-button:hover{
+header .container nav #nav #toggle-button:hover {
     transform: rotate(360deg);
 }
 
@@ -146,6 +214,7 @@ header .container nav #nav ul {
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: 100;
 }
 
 header .container nav ul li#exit {
@@ -194,9 +263,10 @@ header .container nav ul li a:hover {
     flex-direction: column;
     justify-content: space-between;
     width: 70px;
+    z-index: 1;
 }
 
-#scrollbar #scroll-body a{
+#scrollbar #scroll-body a {
     display: block;
     width: 30px;
     height: 4px;
@@ -205,9 +275,11 @@ header .container nav ul li a:hover {
     border-radius: 2px;
     padding: 3px;
 }
-#scrollbar #scroll-body a.active{
-       width: 50px; 
+
+#scrollbar #scroll-body a.active {
+    width: 50px;
 }
+
 #scrollbar #scroll-desc {
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -230,66 +302,81 @@ header .container nav ul li a:hover {
     background: var(--white-color);
     border-radius: 2px;
     top: 110%;
-
 }
 
 /***************************************End Header***************************************/
 
 /***************************************Start Main***************************************/
-main .col:first-of-type{
+main .col:first-of-type {
     flex: 2;
 }
-main .col:last-of-type{
+
+main .col:last-of-type {
     flex: 3;
 }
-main .col{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 5em;
-}
-main h1{
-    color: #fff;
-    font-size: 5em;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-main .col hr{
-    width: 100px;
-    height: 4px;
-    background: var(--main-color);
-    border-radius: 4px;
-    border: none;
-    margin: .6em 0;
-    ml
-}
-main .col hr:last-of-type{
-    margin-left: 30px;
-}
-main h2{
-    color: var(--white-color);
-    font-size: 1.5em;
-    font-weight: 300;
-    margin-top: 2rem;
-    line-height: 1.4;
-}
-main #description{
-    color: var(--white-color);
-    line-height: 1.4;
+
+main #description {
+    color: #fffc;
+    line-height: 1.5;
     font-size: 1.1em;
     text-transform: capitalize;
-    padding-right: 200px;
+    padding-right: 100px;
 }
-main #description span{
+
+main #description span {
     color: var(--main-color);
     font-weight: bold;
     text-decoration: underline;
 }
+
+main .button-cta {
+    color: var(--white-color);
+    background: var(--main-color);
+    border: 3px solid var(--main-color);
+    display: block;
+    width: 40%;
+    margin: 1em auto;
+    padding: .8em 2em;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 2em;
+    transition: var(--transition);
+    font-weight: bolder;
+}
+
+main .button-cta:hover {
+    background: transparent;
+    color: var(--main-color);
+}
+
 /***************************************End Main***************************************/
+
+/***************************************Start portfolio***************************************/
+
+
+
+/***************************************End portfolio***************************************/
+
 
 /***************************************Start Footer***************************************/
 
 
 
 /***************************************End Footer***************************************/
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-dark-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -99999;
+    filter: blur(1px);
+}
