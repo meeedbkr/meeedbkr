@@ -38,7 +38,7 @@ body {
     height: 100vh;
     width: 100vw;
     height: auto;
-    overflow: hidden;
+/*    overflow: hidden;*/
     scroll-behavior: smooth;
     counter-reset: section;
 }
@@ -329,7 +329,7 @@ main #description span {
     text-decoration: underline;
 }
 
-main .button-cta {
+.button-cta {
     color: var(--white-color);
     background: var(--main-color);
     border: 3px solid var(--main-color);
@@ -344,7 +344,12 @@ main .button-cta {
     font-weight: bolder;
 }
 
-main .button-cta:hover {
+section .button-cta{
+    margin: 1.3em 0;
+
+}
+
+.button-cta:hover {
     background: transparent;
     color: var(--main-color);
 }
